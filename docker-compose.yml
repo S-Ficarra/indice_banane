@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  dev:
+    build:
+      context: .
+    volumes:
+      - ./app:/usr/src/app  # Synchronisation du code
+    ports:
+      - "8888:8888"         # Port pour Jupyter (si nécessaire)
+    working_dir: /usr/src/app
+    tty: true               # Garde le terminal actif
